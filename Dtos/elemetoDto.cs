@@ -14,27 +14,33 @@ namespace amoliaz.Dtos
     internal class elemetoDto
     {
         long idElemento = 0;
-        string codigoElemento = "idElemento + cantidadElemento";
+        
         string nombreElemememto = "aaaa";
         string descripcionElemento = "aaaa";
-        int cantidadElemento = 0;
+        int  cantidadElemento = 0;
+        string codigoElemento;
 
-        public elemetoDto(long idElemento, string codigoElemento, string nombreElemememto, string descripcionElemento, int cantidadElemento)
+
+        
+
+        
+
+        public elemetoDto() { }
+
+        public elemetoDto(string nombreElemememto, string descripcionElemento, int cantidadElemento, string codigoElemento)
         {
-            this.idElemento = idElemento;
-            this.codigoElemento = codigoElemento;
             this.nombreElemememto = nombreElemememto;
             this.descripcionElemento = descripcionElemento;
             this.cantidadElemento = cantidadElemento;
+            this.codigoElemento = codigoElemento;
         }
 
         public long IdElemento { get => idElemento; set => idElemento = value; }
-        public string CodigoElemento { get => codigoElemento; set => codigoElemento = value; }
         public string NombreElemememto { get => nombreElemememto; set => nombreElemememto = value; }
         public string DescripcionElemento { get => descripcionElemento; set => descripcionElemento = value; }
         public int CantidadElemento { get => cantidadElemento; set => cantidadElemento = value; }
+        public string CodigoElemento { get => codigoElemento; set => codigoElemento = value; }
 
-        public elemetoDto() { }
         override
         public string ToString()
         {

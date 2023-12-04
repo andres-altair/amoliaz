@@ -38,6 +38,7 @@ namespace amoliaz.Servicios
             Console.WriteLine("Escribe la cantidad");
             crear.CantidadElemento= Convert.ToInt32(Console.ReadLine());  
             return crear;   
+            
         }
 
         /// <summary>
@@ -45,11 +46,11 @@ namespace amoliaz.Servicios
         /// <author>amd 041223</author>
         /// </summary>
         /// <returns>id del elemto</returns>
-        private int pedirId()
+        private string pedirCodigo()
         {
-            Console.WriteLine("¿cual es el id?");
-            int Id = Convert.ToInt32(Console.ReadLine());
-            return Id;  
+            Console.WriteLine("¿cual es el cogigo?");
+            string codigo = Console.ReadLine();
+            return cogigo;  
         }
 
         /// <summary>
@@ -67,10 +68,10 @@ namespace amoliaz.Servicios
         public void eliminarElemento(List<elemetoDto> listaAntigua)
         {
             int eliminar; 
-            int Id = pedirId();
+            string codigo = pedirCodigo();
             foreach(elemetoDto elemeto in listaAntigua)
             {
-                if (elemeto.IdElemento.Equals(Id))
+                if (elemeto.IdElemento.Equals(codigo))
                 {
                     eliminar = Eliminar();
                     elemeto.CantidadElemento = elemeto.CantidadElemento - eliminar;
