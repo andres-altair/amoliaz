@@ -50,7 +50,7 @@ namespace amoliaz.Servicios
         {
             Console.WriteLine("¿cual es el cogigo?");
             string codigo = Console.ReadLine();
-            return cogigo;  
+            return codigo;  
         }
 
         /// <summary>
