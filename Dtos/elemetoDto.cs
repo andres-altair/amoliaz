@@ -14,15 +14,10 @@ namespace amoliaz.Dtos
     internal class elemetoDto
     {
         long idElemento = 0;
-        
+        string codigoElemento ;
         string nombreElemememto = "aaaa";
         string descripcionElemento = "aaaa";
         int  cantidadElemento = 0;
-        string codigoElemento;
-
-
-        
-
         
 
         public elemetoDto() { }
