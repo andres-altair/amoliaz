@@ -1,5 +1,6 @@
 ﻿using amoliaz.Dtos;
 using amoliaz.Servicios;
+using System.Threading.Channels;
 
 namespace amoliaz.Controladores
 {
@@ -36,55 +37,65 @@ namespace amoliaz.Controladores
             bool abrir = false;
             int eleccion1;
             int eleccion2;
-            /*try
+            try
             {
+                do
+                {
+                    eleccion1 = mi.menuPrincipal();
+                    switch (eleccion1)
+                    {
+                        case 0:
+                            abrir = true;
+                                StreamWriter sw = new StreamWriter(Program.rutaLog);
+                            sw.WriteLine("cerrado");
+                            sw.Close();
+                            ; break;
+                        case 1:
+                            oi.registro();
+                            StreamWriter sws = new StreamWriter(Program.rutaLog);
+                            sws.WriteLine("opcion 1");
+                            sws.Close();
+                            break;
+    ;
+                        case 2:
+                            StreamWriter swss = new StreamWriter(Program.rutaLog);
+                            swss.WriteLine("opcion 2");
+                            swss.Close();
+                            eleccion2 = mi.menusecundario();
+                            switch (eleccion2)
+                            {
+                                case 0:
+                                    break;
+                                case 1:
+                                    mi.menuConsulta();
+                                    oi.mostrarConsultas();
+                                    break;
+                                case 2:
+                                    oi.imprimirConsulta();
+                                    break;
 
-            }catch(Exception ex)
+
+                                default:
+                                    Console.WriteLine("eleccion no reconocida");
+                                    break;
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("eleccion no reconocida");
+                            break;
+                    }
+
+                }
+                while (!abrir);
+            }
+            catch(Exception ex)
             {
                 Console.WriteLine("ha habido un error en la aplicacion, intentelo mas tarde");
                 StreamWriter sw = new StreamWriter(Program.rutaLog);
                 sw.WriteLine(ex.ToString());
                 sw.Close();
-            }*/
-            do
-            {
-                eleccion1 = mi.menuPrincipal();
-                switch (eleccion1)
-                {
-                    case 0:
-                        abrir = true
-                            ; break;
-                    case 1:
-                        oi.registro();
-                        break
-;
-                    case 2:
-                        eleccion2 = mi.menusecundario();
-                        switch (eleccion2)
-                        {
-                            case 0:
-                                break;
-                            case 1:
-                                mi.menuConsulta();
-                                oi.mostrarConsultas();
-                                break;
-                            case 2:
-                                oi.imprimirConsulta();
-                                break;
-
-
-                            default:
-                                Console.WriteLine("eleccion no reconocida");
-                                break;
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("eleccion no reconocida");
-                        break;
-                }
-
             }
-            while (!abrir);
+            
             
         }
     }
