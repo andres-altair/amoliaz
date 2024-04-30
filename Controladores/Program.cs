@@ -15,11 +15,11 @@ namespace amoliaz.Controladores
        
         
         public static string rutaS = string.Concat("citasConAsistencia-", hoy.ToString("ddMMyyyy"), ".txt");
-        public static string ruta = "C:\\Users\\profesor\\Desktop\\" + rutaS;
+        public static string ruta = string.Concat("C:\\Users\\profesor\\Desktop\\" , rutaS);
        // public static string ruta = string.Concat("C:\\Users\\profesor\\Desktop\\", rutaS);
 
         public static string rutaSlog = string.Concat("log-", hoy.ToString("ddMMyyyy"), ".txt");
-        public static string rutaLog = "C:\\Users\\profesor\\Desktop\\"+rutaS;
+        public static string rutaLog = string.Concat("C:\\Users\\profesor\\Desktop\\" ,rutaS);
         
         
         public static string opcion;
